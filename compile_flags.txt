@@ -1,0 +1,6 @@
+-Iinclude
+-Wall
+-Wextra
+-Wundef
+-Wunreachable-code
+-Wmissing-field-initializers
