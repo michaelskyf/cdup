@@ -34,7 +34,7 @@ struct hdata *last_entry(struct hdata *first)
 {
 	struct hdata *d = first;
 	struct hdata *pd = first;
-	while(d->next)
+	while(d)
 	{
 		pd = d;
 		d = d->next;
@@ -61,7 +61,7 @@ void compare_files(struct fdata *first_data)
 
 	/* Calculate hashes */
 	d = first_data;
-	for(size_t i = 0; d->next; i++)
+	for(size_t i = 0; d; i++)
 	{
 		FILE *fp = fopen(d->fpath, "r");
 		if(fp == NULL)
@@ -101,7 +101,7 @@ void compare_files(struct fdata *first_data)
 
 		for(size_t j = 0; j < count; j++)
 		{
-			if(buckets[j].next || buckets[j].prev || i == j)
+			if(buckets[j].prev || buckets[j].next || i == j)
 				continue;
 
 			if(memcmp(hashes[i], hashes[j], sizeof(*hashes)) == 0)
