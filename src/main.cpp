@@ -121,7 +121,7 @@ void compare_files(struct fdata *first_data)
 			struct hdata *h = &buckets[i];
 			while(h)
 			{
-				printf("	%s\n", h->f->fpath);
+				printf("+%s\n", h->f->fpath);
 
 				h = h->next;
 			}
