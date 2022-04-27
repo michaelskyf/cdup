@@ -1,4 +1,4 @@
 set(sources
-	${CMAKE_CURRENT_SOURCE_DIR}/main.c
+	${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
 	PARENT_SCOPE
 	)

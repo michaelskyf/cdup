@@ -2,7 +2,7 @@ all:
 	mkdir build; cd build && cmake .. && make && cd ..
 
 run:
-	./build/gltest
+	./build/cdup
 
 clean:
 	rm -rf build
