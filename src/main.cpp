@@ -117,8 +117,28 @@ void compare_files(struct fdata *first_data)
 	{
 		if(buckets[i].prev == NULL && buckets[i].next)
 		{
-			printf("\nFound duplicate files:\n");
 			struct hdata *h = &buckets[i];
+			struct stat sb;
+			stat(h->f->fpath, &sb);
+			float size = sb.st_size;
+			const char *size_type;
+
+			if(size < 1024)
+			{
+				size_type = "B";
+			}
+			else if(size < 1024*1024)
+			{
+				size_type = "KB";
+				size /= 1024;
+			}
+			else
+			{
+				size_type = "MB";
+				size /= 1024 * 1024;
+			}
+
+			printf("\nFound duplicate files of size %.02f %s:\n", size, size_type);
 			while(h)
 			{
 				printf("+%s\n", h->f->fpath);
