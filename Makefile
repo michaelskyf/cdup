@@ -2,7 +2,7 @@ all:
 	mkdir build; cd build && cmake .. && make && cd ..
 
 run:
-	./build/cdup
+	./build/cscan
 
 clean:
 	rm -rf build

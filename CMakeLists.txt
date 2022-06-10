@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(cdup)
+project(cscan)
 
 # C++
 set(CMAKE_CXX_STANDARD 11)
